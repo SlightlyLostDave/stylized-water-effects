@@ -9,5 +9,5 @@ export const useStore = create((set) => ({
   audioEnabled: false,
 
   setAudioEnabled: (enabled) => set(() => ({ audioEnabled: enabled })),
-  setReady: (ready) => set(() => ({ ready })),
+  setReady: (ready) => set(() => ({ ready: ready })),
 }));

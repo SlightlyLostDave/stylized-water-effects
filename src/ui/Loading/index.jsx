@@ -1,6 +1,6 @@
+import { clsx } from 'clsx';
 import { useEffect, useState } from 'react';
 import { useProgress } from '@react-three/drei';
-import clsx from 'clsx';
 
 import { useStore } from '../../hooks/useStore';
 
@@ -18,10 +18,11 @@ export const Loading = () => {
     if (active) return;
 
     setReady(true);
-
     const delayHide = setTimeout(() => setShowLoader(false), 5000);
 
-    return () => clearTimeout(delayHide);
+    return () => {
+      clearTimeout(delayHide);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
@@ -34,7 +35,7 @@ export const Loading = () => {
           { [s.hide]: ready }
         )}
       >
-        <div className={s.loaded}>
+        <div className={s.loading}>
           <div className={s.loader}>
             <span
               style={{ clipPath: `inset(0 ${100 - progress}% 0 0 round 3em)` }}
