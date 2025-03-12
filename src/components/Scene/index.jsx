@@ -7,7 +7,6 @@ export const Scene = () => {
     <>
       <Rocks />
       <Terrain />
-      <Water />
     </>
   );
 };
